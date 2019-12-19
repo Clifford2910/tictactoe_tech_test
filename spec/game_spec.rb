@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'game'
 require 'web_helpers'
 
@@ -29,14 +31,38 @@ describe Game do
   end
 
   context 'knowing the outcome of a game' do
-    it 'should know when player_x wins a game' do
-      player_x_winning_move
-      expect(subject.result?).to eq 'player X wins!'
+    describe 'player_x' do
+      it 'should know when player_x wins a game horizontally' do
+        player_x_winning_move_h
+        expect(subject.result?).to eq 'player X wins!'
+      end
+
+      it 'should know when player_x wins a game vertically' do
+        player_x_winning_move_v
+        expect(subject.result?).to eq 'player X wins!'
+      end
+
+      it 'should know when player_x wins a game diagonally' do
+        player_x_winning_move_d
+        expect(subject.result?).to eq 'player X wins!'
+      end
     end
 
-    it 'should know when player_o wins a game' do
-      player_o_winning_move
-      expect(subject.result?).to eq 'player O wins!'
+    describe 'player_o' do
+      it 'should know when player_o wins a game horizontally' do
+        player_o_winning_move_h
+        expect(subject.result?).to eq 'player O wins!'
+      end
+
+      it 'should know when player_o wins a game vertically' do
+        player_o_winning_move_v
+        expect(subject.result?).to eq 'player O wins!'
+      end
+
+      it 'should know when player_o wins a game diagonally' do
+        player_o_winning_move_d
+        expect(subject.result?).to eq 'player O wins!'
+      end
     end
 
     it 'should know when the result is a draw' do
@@ -48,5 +74,4 @@ describe Game do
       expect(subject.result?).to eq 'next players turn!'
     end
   end
-
 end
