@@ -43,6 +43,10 @@ describe Game do
       fill_the_board_draw
       expect(subject.result?).to eq 'its a draw!'
     end
+
+    it 'shoud prompt for the next turn if no winner/draw result' do
+      expect(subject.result?).to eq 'next players turn!'
+    end
   end
 
 end
