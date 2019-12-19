@@ -16,4 +16,16 @@ describe Game do
     end
   end
 
+  context 'players get error messages for invalid moves' do
+    it 'player_x should get an error if they try and take a populated space' do
+      allow(subject).to receive(:position_taken?).and_return true
+      expect { subject.player_x(1) }.to raise_error 'invalid move: position already taken!'
+    end
+
+    it 'player_o should get an error if they try and take a populated space' do
+      allow(subject).to receive(:position_taken?).and_return true
+      expect { subject.player_o(1) }.to raise_error 'invalid move: position already taken!'
+    end
+  end
+
 end
