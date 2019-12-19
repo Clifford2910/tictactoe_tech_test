@@ -28,4 +28,11 @@ describe Game do
     end
   end
 
+  context 'knowing the outcome of a game' do
+    it 'should know when the result is a draw' do
+      fill_the_board_draw
+      expect(subject.result?).to eq 'its a draw!'
+    end
+  end
+
 end

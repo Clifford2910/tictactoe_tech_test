@@ -22,4 +22,10 @@ class Game
     @board[pos - 1] != ' '
   end
 
+ def result?
+   unless @board.include?(' ')
+     return 'its a draw!'
+   end
+ end
+
 end
