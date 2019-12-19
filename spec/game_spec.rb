@@ -29,6 +29,16 @@ describe Game do
   end
 
   context 'knowing the outcome of a game' do
+    it 'should know when player_x wins a game' do
+      player_x_winning_move
+      expect(subject.result?).to eq 'player X wins!'
+    end
+
+    it 'should know when player_o wins a game' do
+      player_o_winning_move
+      expect(subject.result?).to eq 'player O wins!'
+    end
+
     it 'should know when the result is a draw' do
       fill_the_board_draw
       expect(subject.result?).to eq 'its a draw!'
