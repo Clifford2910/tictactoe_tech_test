@@ -9,16 +9,14 @@ class Game
 
   def player_x(pos)
     raise 'invalid move: position already taken!' if position_taken?(pos)
-
     @board[pos - 1, 1] = 'X'
-    @board
+    return @board
   end
 
   def player_o(pos)
     raise 'invalid move: position already taken!' if position_taken?(pos)
-
     @board[pos - 1, 1] = 'O'
-    @board
+    return @board
   end
 
   def position_taken?(pos)
